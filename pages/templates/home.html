@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock title %}
+      {{ title }}
+{% block content %}
+        <h1>Welcome to my page!</h1>
+        <ul>
+            {% for data in features%}
+               <li>{{ data }}</li>
+               {% endfor %}
+      </ul>
+{% endblock content %}  
