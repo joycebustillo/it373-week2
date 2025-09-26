@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ announcement.title }}{% endblock %}
+
+{% block content %}
+<h1>{{ announcement.title }}</h1>
+<p id="content">{{ announcement.content|slice:":100" }}<span id="more-content" style="display: none;">{{ announcement.content|slice:"100:" }}</span></p>
+<button id="toggle-btn">Read more</button>
+
+<script>
+    const toggleBtn = document.getElementById('toggle-btn');
+    const moreContent = document.getElementById('more-content');
+
+    toggleBtn.addEventListener('click', () => {
+        if (moreContent.style.display === 'none') {
+            moreContent.style.display = 'inline';
+            toggleBtn.textContent = 'Show less'; 
+        } else {
+            moreContent.style.display = 'none';
+            toggleBtn.textContent = 'Read more';
+        }
+    });
+</script>
+{% endblock %}

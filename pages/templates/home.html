@@ -1,12 +1,8 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 
-{% block title %}Home{% endblock title %}
-      {{ title }}
+{% block title %}Home{% endblock %}
+
 {% block content %}
-        <h1>Welcome to my page!</h1>
-        <ul>
-            {% for data in features%}
-               <li>{{ data }}</li>
-               {% endfor %}
-      </ul>
-{% endblock content %}  
+<h1>Welcome to the Mini Site</h1>
+<p>Check out the latest <a href="{% url 'announcements_list' %}">announcements</a>!</p>
+{% endblock %}

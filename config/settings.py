@@ -117,6 +117,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# Add this line to include the "pages/static" directory
+STATICFILES_DIRS = [
+    BASE_DIR / "pages/static",
+]
+
+# Optional: Define STATIC_ROOT if you plan to use collectstatic
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
